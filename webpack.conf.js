@@ -14,7 +14,11 @@ module.exports = {
     path: path.resolve('./dist'),
     filename: 'casual.min.js',
     libraryTarget: "umd"
-  },
+  },/*
+  externals: {
+    mersennetwister: "mersenne-twister",
+    moment: "moment"
+  },*/
   resolve: {
     modules: [
       path.resolve('./node_modules'),
