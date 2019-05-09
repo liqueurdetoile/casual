@@ -4,5 +4,13 @@ node_js:
   - "9"
   - "8"
 sudo: false
-before_install:
-  - 'npm install -g npm'
+cache: "npm"
+before_deploy:
+  - npm run build
+deploy:
+q  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file: "dist/index.min.js"
+    skip_cleanup: true
+    on:
+      tags: true
