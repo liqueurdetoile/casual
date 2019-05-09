@@ -2,8 +2,9 @@
   "name": "casual",
   "version": "1.6.0",
   "description": "Fake data generator",
-  "main": "src/casual.js",
+  "main": "dist/casual.min.js",
   "scripts": {
+    "build": "webpack --config webpack.conf.js -p",
     "test": "mocha -R spec -r should test --recursive"
   },
   "repository": "https://github.com/boo1ean/casual.git",
@@ -27,9 +28,18 @@
     "moment": "^2.15.2"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
     "mocha": "^5.2.0",
     "realist": "~0.2.5",
     "should": "~3.1.2",
-    "text-table": "~0.2.0"
+    "text-table": "~0.2.0",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
