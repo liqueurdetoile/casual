@@ -8,9 +8,9 @@ cache: "npm"
 before_deploy:
   - npm run build
 deploy:
-q  - provider: releases
+  - provider: releases
     api_key: $GITHUB_TOKEN
-    file: "dist/index.min.js"
+    file: "dist/casual.min.js"
     skip_cleanup: true
     on:
       tags: true
